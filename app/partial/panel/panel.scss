@@ -1,0 +1,138 @@
+.wrapper {
+    position: relative;
+    overflow: hidden;
+    @include responsive('670px') {
+        overflow: inherit;
+    }
+}
+
+.contPanel {
+    height: 100%;
+    width: 300px;
+    background-color: #1c3f95;
+    position: absolute;
+    top: 0;
+    right: -300px;
+    z-index: 120;
+    @include transition(.3s all ease);
+    @include responsive('800px') {
+        width: 100%;
+        right: -100%;
+    }
+    @include responsive('670px') {
+        position: fixed;
+    }
+    .insidePanel {
+        height: 100%;
+    }
+}
+
+.btnPanel {
+    z-index: 110;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+    padding: 5px;
+    font-size: 35px;
+    color: white;
+    @include responsive('800px') {
+        top: 10px;
+        right: 10px;
+        font-size: 30px;
+    }
+    @include responsive('670px') {
+        position: fixed;
+    }
+}
+
+.insidePanel {
+    position: relative;
+    .closePanel {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        cursor: pointer;
+        color: white;
+        font-size: 25px;
+        @include responsive('800px') {
+            top: 10px;
+            right: 10px;
+        }
+    }
+    .ipCenter {
+        position: relative;
+        top: 50%;
+        @include transform(translateY(-50%));
+    }
+    .ipNav {
+        padding: 50px;
+        li {
+            color: white;
+            margin: 15px 0;
+            cursor: pointer;
+            font-size: 18px;
+            padding: 4px 0;
+            font-family: font2;
+            font-weight: bold;
+            @include responsive('800px') {
+                text-align: center;
+            }
+        }
+        .Res {
+            display: none;
+            @include responsive('670px') {
+                display: block;
+            }
+        }
+        .noRes {
+            @include responsive('670px') {
+                display: none;
+            }
+        }
+        @include responsive('800px') {
+            padding: 0;
+            margin-bottom: 50px;
+        }
+    }
+    .ipSocial {
+        padding: 40px 50px;
+        li {
+            margin: 15px 0;
+            a {
+                color: white;
+                font-family: font2;
+                font-weight: bold;
+                display: block;
+                i {
+                    margin-right: 10px;
+                    width: 20px;
+                    text-align: center;
+                    font-size: 22px;
+                }
+                &:hover {
+                    text-decoration: none;
+                }
+                @include responsive('800px') {
+                    text-align: center;
+                }
+            }
+        }
+        @include responsive('800px') {
+            padding: 0;
+            margin-bottom: 30px;
+        }
+    }
+    .terms {
+        color: white;
+        padding: 0 50px;
+        font-family: font2;
+        font-weight: bold;
+        font-size: 12px;
+        display: block;
+        text-decoration: underline;
+        @include responsive('800px') {
+            text-align: center;
+        }
+    }
+}

@@ -1,0 +1,85 @@
+{
+    "files": [
+        {
+            "source": "/assets/images/aboutTampico.jpg",
+            "type": "IMAGE",
+            "size": 66.2
+        },
+        {
+            "source": "/assets/images/arrow.png",
+            "type": "IMAGE",
+            "size": 4.1
+        },
+        {
+            "source": "/assets/images/icoBanana.png",
+            "type": "IMAGE",
+            "size": 3.2
+        },
+        {
+            "source": "/assets/images/icoCereza.png",
+            "type": "IMAGE",
+            "size": 2.9
+        },
+        {
+            "source": "/assets/images/icoNaranja.png",
+            "type": "IMAGE",
+            "size": 3.3
+        },
+        {
+            "source": "/assets/images/icoPiña.png",
+            "type": "IMAGE",
+            "size": 3.8
+        },
+        {
+            "source": "/assets/images/introVideo.jpg",
+            "type": "IMAGE",
+            "size": 289.9
+        },
+        {
+            "source": "/assets/images/islandPunch.png",
+            "type": "IMAGE",
+            "size": 614.2
+        },
+        {
+            "source": "/assets/images/patron1.jpg",
+            "type": "IMAGE",
+            "size": 48.5
+        },
+        {
+            "source": "/assets/images/patron2.jpg",
+            "type": "IMAGE",
+            "size": 48.2
+        },
+        {
+            "source": "/assets/images/playIco.png",
+            "type": "IMAGE",
+            "size": 11.9
+        },
+        {
+            "source": "/assets/images/poster.jpg",
+            "type": "IMAGE",
+            "size": 48.2
+        },
+        {
+            "source": "/assets/images/tapa.png",
+            "type": "IMAGE",
+            "size": 17.2
+        },
+        {
+            "source": "/assets/images/textIntro.png",
+            "type": "IMAGE",
+            "size": 144.0
+        },
+        {
+            "source": "/assets/images/textStep.png",
+            "type": "IMAGE",
+            "size": 153.4
+        },
+        {
+            "source": "/assets/images/tropicalPunch.png",
+            "type": "IMAGE",
+            "size": 553.5
+        }
+    ]
+}
+

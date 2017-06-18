@@ -1,0 +1,365 @@
+<div ng-controller="HomeCtrl" class="contHome">
+
+    <div class="blockVideo" id="video">
+        <div class="bvIntro">
+            <img class="bvLogo" src="/assets/images/logo.png" alt="">
+            <div class="bviCenter">
+                <img class="text" src="/assets/images/textIntro.png" alt="">
+                <br>
+                <img class="play" ng-click="introVideo.closeIntro()" src="/assets/images/playIco.png" alt="">
+            </div>
+        </div>
+        <div class="bvSteps">
+            <div class="bvsBack">
+                <div class="bvsCenter">
+                    <div class="bvsContent">
+                        <img class="imgText" src="/assets/images/textStep.png" alt="">
+                        <br>
+                        <div class="contReady">
+                            <div class="btnOrange" ng-if="!valIOS" ng-click="introVideo.skipIntro()">LISTO</div>
+                            <div class="btnOrange" ng-if="valIOS">LISTO</div>
+                        </div>
+                        <img class="arrow" src="/assets/images/arrow.png" alt="">
+                    </div>
+                </div>
+                <img class="cover" src="/assets/images/tapa.png" alt="">
+            </div>
+        </div>
+        <div class="bvFunction">
+            <div class="contentIOS" ng-if="valIOS">
+                <img class="cover changeAudio" src="/assets/images/tapa.png" alt="">
+                <video class="js-video">
+                    <source src="/assets/videos/video2.m4v" type="video/x-m4v">
+                </video>
+                <canvas class="js-canvas"></canvas>
+
+                <video class="js-video2">
+                    <source src="/assets/videos/video1.m4v" type="video/x-m4v">
+                </video>
+                <canvas class="js-canvas2"></canvas>
+
+                <script>
+                    var canvasVideo = new CanvasVideoPlayer({
+                        videoSelector: '.js-video',
+                        canvasSelector: '.js-canvas',
+                        audio: true
+                    });
+
+                    var canvasVideo2 = new CanvasVideoPlayer({
+                        videoSelector: '.js-video2',
+                        canvasSelector: '.js-canvas2',
+                        audio: true
+                    });
+
+                    $('.btnOrange').on('click', function () {
+                        $('.bvSteps').fadeOut(200);
+                        canvasVideo2.play();
+                    });
+
+                    var video = 1;
+                    var currentTime = 0;
+                    $('.changeAudio').on('click', function () {
+                        if (video == 1) {
+                            currentTime = canvasVideo2.currentTime();
+                            canvasVideo.jumpTo(currentTime);
+                            canvasVideo.play();
+                            $('.js-canvas2').fadeOut(200, function () {
+                                canvasVideo2.pause();
+                            });
+                            video = 2;
+                        } else {
+                            currentTime = canvasVideo.currentTime();
+                            canvasVideo2.jumpTo(currentTime);
+                            canvasVideo2.play();
+                            $('.js-canvas2').fadeIn(200, function () {
+                                canvasVideo.pause();
+                            });
+                            video = 1;
+                        }
+                    })
+                </script>
+            </div>
+            <div class="noIOS" ng-if="!valIOS">
+                <img class="cover" ng-click="videos.changeVideo()" src="/assets/images/tapa.png" alt="">
+                <div class="bvfVideo1">
+                    <videogular vg-preload vg-player-ready="video1.playerReady($API)">
+                        <vg-media vg-src="video1.config.sources">
+                        </vg-media>
+                    </videogular>
+                </div>
+                <div class="bvfVideo2">
+                    <videogular vg-preload vg-player-ready="video2.playerReady($API)"
+                                vg-complete="videos.completeVideo()">
+                        <vg-media vg-src="video2.config.sources">
+                        </vg-media>
+                    </videogular>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="blockAnimation">
+        <ul class="baTabs" ng-show="currentState==4 || currentState==3">
+            <li class="slide3" ng-click="state.item2GoItem1()"></li>
+            <li class="slide4" ng-click="state.item1GoItem2()"></li>
+        </ul>
+        <div class="baColumn" id="column1">
+            <div class="bacUnit aboutText">
+                <img class="logo" src="/assets/images/logo.png" alt="">
+                <div class="atCenter">
+                    <h3>Sobre <span>Tampico</span></h3>
+                    <div class="atcText">
+                        <p>Vivimos en un mundo lleno de personas, momentos y cosas irresistibles, es dificl resistirse a
+                            no querer tocar, experimentar, sentir, o interactuar con ellos.</p>
+                        <p>En Tampico, descubrimos la fórmula que hace que las cosas sean irresistibles y lo usamos como
+                            inspiración para nuestro producto, agregando color y sabor.</p>
+                        <p>La fórmula es la mezcla de grandes cosas. Para crear Tampico, hemos mezclado diferentes
+                            frutas creando una bebida de zumo irresistible.</p>
+                        <p>Tampico. Embotellamos lo irresistible.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="bacUnit item1Image slideItemsImage">
+                <img class="logo" src="/assets/images/logo.png" alt="">
+                <img class="item" src="/assets/images/tropicalPunch.png" alt="">
+            </div>
+            <div class="bacUnit item2Image slideItemsImage">
+                <img class="logo" src="/assets/images/logo.png" alt="">
+                <img class="item" src="/assets/images/islandPunch.png" alt="">
+            </div>
+        </div styledi>
+        <div class="baColumn" id="column2">
+            <div class="bacUnit item2Text slideItemsText">
+                <div class="itCenter">
+                    <h4>Presentación</h4>
+                    <h3>Island Punch</h3>
+                    <div class="itcText">
+                        <div class="itcBlock">
+                            <h5>Descripción</h5>
+                            <p>¿Qué se obtiene cuando se mezclan las piñas, plátanos y naranjas? Una combinación
+                                irresistible que hace que tu boca se sienta como que está en una aventura exótica.</p>
+                        </div>
+                        <div class="itcBlock">
+                            <h5>Sabores clave</h5>
+                            <ul class="fruits">
+                                <li>
+                                    <img src="/assets/images/icoPiña.png" alt="">
+                                    <span>Piña</span>
+                                </li>
+                                <li>
+                                    <img src="/assets/images/icoNaranja.png" alt="">
+                                    <span>Naranja</span>
+                                </li>
+                                <li>
+                                    <img src="/assets/images/icoBanana.png" alt="">
+                                    <span>Plátano</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="itcBlock">
+                            <h5>Tamaños disponibles</h5>
+                            <ul class="ingredients">
+                                <li>
+                                    <i class="fa fa-circle"></i>
+                                    <span>1 Galón</span>
+                                </li>
+                                <li>
+                                    <i class="fa fa-circle"></i>
+                                    <span>1/2 Galón</span>
+                                </li>
+                                <li>
+                                    <i class="fa fa-circle"></i>
+                                    <span>32 oz.</span>
+                                </li>
+                                <li>
+                                    <i class="fa fa-circle"></i>
+                                    <span>6 Pack</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="bacUnit item1Text slideItemsText">
+                <div class="itCenter">
+                    <h4>Presentación</h4>
+                    <h3>Tropical Punch</h3>
+                    <div class="itcText">
+                        <div class="itcBlock">
+                            <h5>Descripción</h5>
+                            <p>Hay más de una forma de experimentar una utopía tropical. Da el paso y disfruta de esta
+                                combinación. La mezcla perfecta de cerezas, naranjas y piñas ayudará a crear un paraíso
+                                tropical para tu paladar.</p>
+                        </div>
+                        <div class="itcBlock">
+                            <h5>Sabores clave</h5>
+                            <ul class="fruits">
+                                <li>
+                                    <img src="/assets/images/icoNaranja.png" alt="">
+                                    <span>Naranja</span>
+                                </li>
+                                <li>
+                                    <img src="/assets/images/icoCereza.png" alt="">
+                                    <span>Cereza</span>
+                                </li>
+                                <li>
+                                    <img src="/assets/images/icoPiña.png" alt="">
+                                    <span>Piña</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="itcBlock">
+                            <h5>Tamaños disponibles</h5>
+                            <ul class="ingredients">
+                                <li>
+                                    <i class="fa fa-circle"></i>
+                                    <span>1 Galón</span>
+                                </li>
+                                <li>
+                                    <i class="fa fa-circle"></i>
+                                    <span>32 oz.</span>
+                                </li>
+                                <li>
+                                    <i class="fa fa-circle"></i>
+                                    <span>20 oz.</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="bacUnit aboutImage"></div>
+        </div>
+    </div>
+    <div class="columnRes">
+        <div class="crUnit">
+            <div class="aboutText2">
+                <img class="logo" src="/assets/images/logo.png" alt="">
+                <div class="atCenter">
+                    <h3>Sobre <span>Tampico</span></h3>
+                    <div class="atcText">
+                        <p>Vivimos en un mundo lleno de personas, momentos y cosas irresistibles, es dificl
+                            resistirse a
+                            no querer tocar, experimentar, sentir, o interactuar con ellos.</p>
+                        <p>En Tampico, descubrimos la fórmula que hace que las cosas sean irresistibles y lo usamos
+                            como
+                            inspiración para nuestro producto, agregando color y sabor.</p>
+                        <p>La fórmula es la mezcla de grandes cosas. Para crear Tampico, hemos mezclado diferentes
+                            frutas creando una bebida de zumo irresistible.</p>
+                        <p>Tampico. Embotellamos lo irresistible.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="crUnit">
+            <div class="contPresent purpleCont">
+                <img class="logo" src="/assets/images/logo.png" alt="">
+                <div class="itCenter">
+                    <h4>Presentación</h4>
+                    <h3>Tropical Punch</h3>
+                    <div class="itcText">
+                        <div class="itcBlock">
+                            <h5>Descripción</h5>
+                            <p>Hay más de una forma de experimentar una utopía tropical. Da el paso y disfruta de
+                                esta
+                                combinación. La mezcla perfecta de cerezas, naranjas y piñas ayudará a crear un
+                                paraíso
+                                tropical para tu paladar.</p>
+                        </div>
+                        <div class="itcBlock">
+                            <h5>Sabores clave</h5>
+                            <ul class="fruits">
+                                <li>
+                                    <img src="/assets/images/icoNaranja.png" alt="">
+                                    <span>Naranja</span>
+                                </li>
+                                <li>
+                                    <img src="/assets/images/icoCereza.png" alt="">
+                                    <span>Cereza</span>
+                                </li>
+                                <li>
+                                    <img src="/assets/images/icoPiña.png" alt="">
+                                    <span>Piña</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="itcBlock">
+                            <h5>Tamaños disponibles</h5>
+                            <ul class="ingredients">
+                                <li>
+                                    <i class="fa fa-circle"></i>
+                                    <span>1 Galón</span>
+                                </li>
+                                <li>
+                                    <i class="fa fa-circle"></i>
+                                    <span>32 oz.</span>
+                                </li>
+                                <li>
+                                    <i class="fa fa-circle"></i>
+                                    <span>20 oz.</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <img class="bottle" src="/assets/images/tropicalPunch.png" alt="">
+            </div>
+        </div>
+        <div class="crUnit">
+            <div class="contPresent yellowCont">
+                <img class="logo" src="/assets/images/logo.png" alt="">
+                <div class="itCenter">
+                    <h4>Presentación</h4>
+                    <h3>Island Punch</h3>
+                    <div class="itcText">
+                        <div class="itcBlock">
+                            <h5>Descripción</h5>
+                            <p>¿Qué se obtiene cuando se mezclan las piñas, plátanos y naranjas? Una combinación
+                                irresistible que hace que tu boca se sienta como que está en una aventura
+                                exótica.</p>
+                        </div>
+                        <div class="itcBlock">
+                            <h5>Sabores clave</h5>
+                            <ul class="fruits">
+                                <li>
+                                    <img src="/assets/images/icoPiña.png" alt="">
+                                    <span>Piña</span>
+                                </li>
+                                <li>
+                                    <img src="/assets/images/icoNaranja.png" alt="">
+                                    <span>Naranja</span>
+                                </li>
+                                <li>
+                                    <img src="/assets/images/icoBanana.png" alt="">
+                                    <span>Plátano</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="itcBlock">
+                            <h5>Tamaños disponibles</h5>
+                            <ul class="ingredients">
+                                <li>
+                                    <i class="fa fa-circle"></i>
+                                    <span>1 Galón</span>
+                                </li>
+                                <li>
+                                    <i class="fa fa-circle"></i>
+                                    <span>1/2 Galón</span>
+                                </li>
+                                <li>
+                                    <i class="fa fa-circle"></i>
+                                    <span>32 oz.</span>
+                                </li>
+                                <li>
+                                    <i class="fa fa-circle"></i>
+                                    <span>6 Pack</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <img class="bottle" src="/assets/images/islandPunch.png" alt="">
+            </div>
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,630 @@
+.content {
+    overflow: hidden;
+    position: relative;
+    @include responsive('670px') {
+        overflow: inherit;
+    }
+}
+
+.contHome {
+    @include transition(.3s all ease);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.columnRes {
+    display: none;
+    @include responsive('670px') {
+        display: block;
+    }
+    .aboutText2 {
+        background-image: url(/assets/images/fondo.jpg);
+        background-size: cover;
+        background-position: center;
+        padding: 30px 0;
+        .logo {
+            width: 140px;
+            display: block;
+            margin: 0 auto 30px;
+        }
+        .atCenter {
+            width: 85%;
+            margin: 0 auto;
+            h3 {
+                color: #fff;
+                font-family: font1;
+                font-size: 30px;
+                margin-bottom: 20px;
+                span {
+                    color: #ffe203;
+                }
+            }
+            .atcText {
+                p {
+                    color: #fff;
+                    font-family: font2;
+                    font-size: 16px;
+                    margin-bottom: 20px;
+                }
+            }
+        }
+    }
+    .purpleCont {
+        background-color: #bf2339;
+        .itCenter {
+            h3 {
+                color: #f92f4b;
+            }
+        }
+        .ingredients {
+            li {
+                i {
+                    color: #ed1552;
+                }
+            }
+        }
+    }
+    .yellowCont {
+        background-color: #ecb224;
+        .itCenter {
+            h3 {
+                color: #ffe203;
+            }
+        }
+        .ingredients {
+            li {
+                i {
+                    color: #fa8d00;
+                }
+            }
+        }
+    }
+    .contPresent {
+        padding: 30px 0;
+        .bottle {
+            width: 300px;
+            display: block;
+            margin: 20px auto 0;
+        }
+        .logo {
+            width: 140px;
+            display: block;
+            margin: 0 auto 30px;
+        }
+        .itCenter {
+            width: 85%;
+            margin: 0 auto;
+            h4, h3 {
+                font-family: font1;
+            }
+            h4 {
+                color: #fff;
+                font-size: 20px;
+                margin-bottom: 5px;
+            }
+            h3 {
+                font-size: 35px;
+                margin-bottom: 30px;
+            }
+            .itcText {
+                .itcBlock {
+                    margin-bottom: 20px;
+                    h5 {
+                        color: #fff;
+                        font-family: font3;
+                        font-size: 16px;
+                        margin-bottom: 7px;
+                    }
+                    p {
+                        color: #fff;
+                        font-size: 16px;
+                        font-family: font2;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.blockVideo {
+    height: 100%;
+    background-color: #00A000;
+    position: relative;
+    .bvFunction {
+        height: 100%;
+        position: relative;
+        .contentIOS, .noIOS {
+            position: relative;
+        }
+        .contentIOS {
+            position: relative;
+            background-color: black;
+            canvas {
+                height: 100%;
+                width: 100%;
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+            .cover {
+                cursor: pointer;
+                position: absolute;
+                bottom: 40px;
+                right: 40px;
+                width: 120px;
+                z-index: 10;
+                @include responsive('800px') {
+                    bottom: 20px;
+                    right: 20px;
+                    width: 90px;
+                }
+                @include responsive('600px') {
+                    bottom: 10px;
+                    right: 10px;
+                    width: 50px;
+                }
+            }
+        }
+        .bvfVideo1, .bvfVideo2, .noIOS, .contentIOS {
+            height: 100%;
+            width: 100%;
+        }
+        .bvfVideo1 {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 5;
+        }
+        .cover {
+            cursor: pointer;
+            position: absolute;
+            bottom: 40px;
+            right: 40px;
+            width: 120px;
+            z-index: 10;
+            @include responsive('800px') {
+                bottom: 20px;
+                right: 20px;
+                width: 90px;
+            }
+            @include responsive('600px') {
+                bottom: 10px;
+                right: 10px;
+                width: 50px;
+            }
+        }
+    }
+    .bvSteps {
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        z-index: 99;
+        top: 0;
+        left: 0;
+        background-image: url("/assets/images/poster.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        .bvsBack {
+            background-color: rgba(84, 81, 81, 0.76);
+            height: 100%;
+            width: 100%;
+            position: relative;
+            .cover {
+                position: absolute;
+                bottom: 40px;
+                right: 40px;
+                width: 120px;
+                @include responsive('800px') {
+                    bottom: 20px;
+                    right: 20px;
+                    width: 90px;
+                }
+                @include responsive('600px') {
+                    bottom: 10px;
+                    right: 10px;
+                    width: 50px;
+                }
+            }
+        }
+        .bvsCenter {
+            text-align: center;
+            position: relative;
+            top: 50%;
+            @include transform(translateY(-50%));
+            .bvsContent {
+                width: 350px;
+                margin: 0 auto;
+                position: relative;
+                @include responsive('800px') {
+                    width: 280px;
+                }
+                @include responsive('600px') {
+                    width: 150px;
+                }
+                @include responsive('350px') {
+                    width: 65%;
+                }
+                .arrow {
+                    position: absolute;
+                    bottom: 0;
+                    right: -170px;
+                    width: 150px;
+                    @include responsive('600px') {
+                        width: 70px;
+                        right: -80px;
+                    }
+                    @include responsive('350px') {
+                        display: none;
+                    }
+                }
+            }
+            .imgText {
+                width: 100%;
+            }
+            .contReady {
+                height: 90px;
+                @include transform(rotate(-9deg));
+                .btnOrange {
+                    float: right;
+                    background-color: #ffa814;
+                    border-radius: 2px;
+                    color: white;
+                    font-family: font1;
+                    padding: 10px 20px;
+                    cursor: pointer;
+                    @include responsive('600px') {
+                        font-size: 10px;
+                        padding: 5px 10px;
+                    }
+                }
+                @include responsive('600px') {
+                    height: 30px;
+                }
+            }
+        }
+    }
+    .bvIntro {
+        background-image: url("/assets/images/introVideo.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 100;
+        .bvLogo {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: 180px;
+            @include responsive('850px') {
+                top: 10px;
+                left: 10px;
+                width: 130px;
+            }
+            @include responsive('600px') {
+                width: 90px;
+            }
+        }
+        .bviCenter {
+            text-align: center;
+            position: relative;
+            top: 50%;
+            @include transform(translateY(-50%));
+            img {
+                margin: 0 auto;
+            }
+            .text {
+                width: 400px;
+                @include responsive('800px') {
+                    width: 300px;
+                }
+                @include responsive('600px') {
+                    width: 150px;
+                }
+                @include responsive('350px') {
+                    width: 70%;
+                }
+            }
+            .play {
+                cursor: pointer;
+                width: 135px;
+                @include responsive('800px') {
+                    width: 90px;
+                }
+                @include responsive('600px') {
+                    width: 50px;
+                }
+                @include responsive('350px') {
+                    width: 90px;
+                }
+            }
+        }
+    }
+}
+
+.blockAnimation {
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+    height: 100%;
+    @include responsive('670px') {
+        display: none;
+    }
+    .baTabs {
+        position: absolute;
+        top: 50%;
+        @include transform(translateY(-50%));
+        z-index: 10;
+        right: 10px;
+        li {
+            display: block;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            margin: 10px 0;
+            border: 1px solid white;
+            cursor: pointer;
+        }
+        .active {
+            background-color: white;
+        }
+    }
+    .baColumn {
+        float: left;
+        width: 50%;
+        height: 300%;
+        position: absolute;
+        @include transition(.5s all ease);
+        &:first-child {
+            top: 0;
+            left: 0;
+        }
+        &:last-child {
+            top: -200%;
+            right: 0;
+        }
+        .bacUnit {
+            height: 100%;
+        }
+        .aboutText {
+            background-image: url(/assets/images/fondo.jpg);
+            background-size: cover;
+            background-position: left;
+        }
+        .aboutImage {
+            background-image: url(/assets/images/aboutTampico.jpg);
+            background-size: cover;
+            background-position: center;
+        }
+        .item1Image {
+            background-image: url(/assets/images/patron1.jpg);
+        }
+        .item1Text {
+            background-color: #bf2339;
+            .itCenter {
+                h3 {
+                    color: #f92f4b;
+                }
+                .ingredients {
+                    li {
+                        i {
+                            color: #ed1552;
+                        }
+                    }
+                }
+            }
+        }
+        .item2Image {
+            background-image: url(/assets/images/patron2.jpg);
+        }
+        .item2Text {
+            background-color: #ecb224;
+            .itCenter {
+                h3 {
+                    color: #ffe203;
+                }
+                .ingredients {
+                    li {
+                        i {
+                            color: #fa8d00;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.aboutText {
+    position: relative;
+    .logo {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        width: 180px;
+        @include responsive('850px') {
+            top: 10px;
+            left: 10px;
+            width: 130px;
+        }
+    }
+    .atCenter {
+        width: 70%;
+        margin: 0 auto;
+        position: relative;
+        top: 50%;
+        @include transform(translateY(-50%));
+        @include responsive('670px') {
+            width: 80%;
+        }
+        h3 {
+            color: white;
+            font-family: font1;
+            font-size: 30px;
+            margin-bottom: 20px;
+            span {
+                color: #ffe203;
+            }
+            @include responsive('670px') {
+                font-size: 23px;
+            }
+        }
+        .atcText {
+            p {
+                color: white;
+                font-family: font2;
+                font-size: 16px;
+                margin-bottom: 20px;
+                &:last-child {
+                    margin-bottom: 0;
+                    margin-top: 40px;
+                }
+                @include responsive('670px') {
+                    font-size: 13px;
+                }
+            }
+        }
+    }
+}
+
+.slideItemsText {
+    .itCenter {
+        width: 70%;
+        margin: 0 auto;
+        position: relative;
+        top: 50%;
+        @include transform(translateY(-50%));
+        h4, h3 {
+            font-family: font1;
+        }
+        h4 {
+            color: white;
+            font-size: 20px;
+            margin-bottom: 5px;
+        }
+        h3 {
+            font-size: 40px;
+            margin-bottom: 30px;
+        }
+        .itcText {
+            .itcBlock {
+                margin-bottom: 20px;
+                &:last-child {
+                    margin-bottom: 0;
+                }
+                h5 {
+                    color: white;
+                    font-family: font3;
+                    font-size: 16px;
+                    margin-bottom: 7px;
+                }
+                p {
+                    color: white;
+                    font-size: 16px;
+                    font-family: font2;
+                }
+            }
+        }
+    }
+}
+
+.fruits {
+    li {
+        display: inline-block;
+        vertical-align: bottom;
+        text-align: center;
+        margin: 10px 20px;
+        span {
+            display: block;
+            color: white;
+            margin-top: 5px;
+            font-family: font2;
+            font-weight: bold;
+        }
+    }
+}
+
+.ingredients {
+    li {
+        margin: 5px 0;
+        i, span {
+            display: inline-block;
+            vertical-align: middle;
+        }
+        i {
+            font-size: 6px;
+            margin-right: 10px;
+        }
+        span {
+            color: white;
+            font-family: font2;
+            font-size: 16px;
+        }
+    }
+}
+
+.slideItemsImage {
+    position: relative;
+    .logo {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        width: 180px;
+        @include responsive('850px') {
+            top: 10px;
+            left: 10px;
+            width: 130px;
+        }
+    }
+    .item {
+        height: 80%;
+        position: absolute;
+        top: 10%;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        margin: auto;
+    }
+}
+
+//video::-webkit-media-controls-fullscreen-button {
+//    display: none;
+//}
+
+.bvfIOS {
+    height: 100%;
+    position: relative;
+    background-color: black;
+    video {
+        //position: absolute;
+        top: 0;
+        left: 0;
+        height: 120px;
+        width: 200px;
+        z-index: 10;
+    }
+    .coverIOS {
+        cursor: pointer;
+        position: absolute;
+        bottom: 40px;
+        right: 40px;
+        width: 120px;
+        z-index: 20;
+        @include responsive('800px') {
+            bottom: 20px;
+            right: 20px;
+            width: 90px;
+        }
+        @include responsive('600px') {
+            bottom: 10px;
+            right: 10px;
+            width: 50px;
+        }
+    }
+}

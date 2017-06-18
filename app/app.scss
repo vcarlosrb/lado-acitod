@@ -1,0 +1,132 @@
+/* Required for Angular UI Bootstrap */
+.nav, .pagination, .carousel, .panel-title a {
+    cursor: pointer;
+}
+
+@import "assets/mixins/responsive";
+@import "assets/mixins/animations";
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    /*font-size: 100%;
+    font: inherit;*/
+    vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+
+body {
+    line-height: 1;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+button, textarea, input {
+    outline: none;
+    border: none;
+}
+
+blockquote, q {
+    quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+html, body, .wrapper, .content, .contHome {
+    height: 100%;
+}
+
+html {
+    @include responsive('670px') {
+        overflow-x: hidden;
+    }
+}
+
+@font-face {
+    font-family: "font1";
+    src: url("/assets/fonts/GothamHTF-Black.otf");
+}
+
+@font-face {
+    font-family: font2;
+    src: url("/assets/fonts/GothamHTF-Light.otf");
+}
+
+@font-face {
+    font-family: font3;
+    src: url("/assets/fonts/GothamNarrow-Black.otf");
+}
+
+@font-face {
+    font-family: font4;
+    src: url("/assets/fonts/Pacifico.ttf");
+}
+
+@include keyframe(rotate) {
+    100% {
+        @include transform(rotate(360deg));
+    }
+}
+
+.fadeIn {
+    @include animation(0s, 1s, fadeIn, linear, finite);
+}
+
+@include keyframe(fadeIn) {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Component SCSS */
+@import "partial/home/home.scss";
+@import "partial/panel/panel.scss";
+@import "partial/loader/loader.scss";
+/* Add Component SCSS Above */
+
+/* Personal preference for BS modal.  The SCSS below makes the backdrop white and
+   causes the modal to fade in rather than slide in. */
+//@modal-backdrop-bg: white;
+//.modal {
+//	&.fade {
+//		.transition(opacity .3s);
+//	}
+//	&.fade .modal-dialog {
+//		.translate(0,0);
+//	}
+//}

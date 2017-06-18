@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html ng-app="tampico">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <base href="/">
+
+    <title>Lado Ácido de las Cosas</title>
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <link href="assets/images/favicon.ico" rel="shortcut icon" type="image/x-icon"/>
+
+    <!-- build:css styles/vendor.css -->
+    <!-- bower:css -->
+    <link rel="stylesheet" href="vendor/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="vendor/videogular-themes-default/videogular.css" />
+    <!-- endbower -->
+    <!-- endbuild -->
+    <link rel="stylesheet" href="assets/source-css/font-awesome.min.css">
+
+    <!-- build:css styles/app.css -->
+    <link rel="stylesheet" type="text/css" href="tmp/app.css"/>
+    <!-- endbuild -->
+
+</head>
+<body ng-controller="MainCtrl">
+
+<div class="wrapper">
+    <div class="btnPanel" ng-click="panel.showPanel()"><i class="fa fa-bars"></i></div>
+    <div ui-view class="content view-animate"></div>
+    <div ui-view="panel" class="contPanel"></div>
+
+</div>
+
+<!-- build:js scripts/vendor.js -->
+<!-- bower:js -->
+<script src="vendor/jquery/dist/jquery.js"></script>
+<script src="vendor/underscore/underscore.js"></script>
+<script src="vendor/bootstrap/dist/js/bootstrap.js"></script>
+<script src="vendor/angular/angular.js"></script>
+<script src="vendor/angular-ui-router/release/angular-ui-router.js"></script>
+<script src="vendor/angular-animate/angular-animate.js"></script>
+<script src="vendor/angular-resource/angular-resource.js"></script>
+<script src="vendor/angular-cookies/angular-cookies.js"></script>
+<script src="vendor/angular-mocks/angular-mocks.js"></script>
+<script src="vendor/angular-ui-utils/ui-utils.js"></script>
+<script src="vendor/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+<script src="vendor/moment/moment.js"></script>
+<script src="vendor/angular-sanitize/angular-sanitize.js"></script>
+<script src="vendor/videogular/videogular.js"></script>
+<script src="vendor/videogular-controls/vg-controls.js"></script>
+<script src="vendor/videogular-overlay-play/vg-overlay-play.js"></script>
+<script src="vendor/videogular-poster/vg-poster.js"></script>
+<script src="vendor/videogular-buffering/vg-buffering.js"></script>
+<!-- endbower -->
+<!-- endbuild -->
+
+<script src="assets/source-js/jquery.html5Loader.js"></script>
+<script src="assets/source-js/fastclick.js"></script>
+<script src="assets/source-js/demo.js"></script>
+<script src="assets/source-js/canvas-video-player.js"></script>
+
+<!-- build:js scripts/app.js -->
+<!-- Main App JS -->
+<script src="app.js"></script>
+<script src="partial/home/home.js"></script>
+<script src="partial/panel/panel.js"></script>
+<script src="partial/loader/loader.js"></script>
+<!-- Add New Component JS Above -->
+
+<!-- endbuild -->
+
+</body>
+</html>
+

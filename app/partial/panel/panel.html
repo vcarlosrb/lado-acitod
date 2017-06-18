@@ -1,0 +1,19 @@
+<div ng-controller="PanelCtrl" class="insidePanel">
+    <div class="closePanel" ng-click="panel.closePanel()"><i class="fa fa-times"></i></div>
+    <div class="ipCenter">
+        <ul class="ipNav">
+            <li class="noRes" ng-click="state.goState(1)">Inicio</li>
+            <li class="Res" ng-click="slideTab.goTo('.blockVideo')">Inicio</li>
+            <li class="noRes" ng-click="state.goState(2)">Sobre Tampico</li>
+            <li class="Res" ng-click="slideTab.goTo('.aboutText2')">Sobre Tampico</li>
+            <li class="noRes" ng-click="state.goState(3)">Presentaciones</li>
+            <li class="Res" ng-click="slideTab.goTo('.purpleCont')">Presentaciones</li>
+        </ul>
+        <ul class="ipSocial">
+            <li><a href=""><i class="fa fa-facebook"></i> Facebook</a></li>
+            <li><a href=""><i class="fa fa-instagram"></i> Instagram</a></li>
+            <li><a href=""><i class="fa fa-twitter"></i> Twitter</a></li>
+        </ul>
+        <a class="terms" href="">Términos y Condiciones</a>
+    </div>
+</div>

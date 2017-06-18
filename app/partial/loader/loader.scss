@@ -1,0 +1,134 @@
+.contLoader {
+    height: 100%;
+    background-image: url("/assets/images/fondo.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    z-index: 500;
+}
+
+.preLoader {
+    text-align: center;
+    position: relative;
+    top: 50%;
+    @include transform(translateY(-50%));
+    .plLogo {
+        margin-bottom: 100px;
+        @include responsive('600px') {
+            width: 100px;
+            margin-bottom: 30px;
+        }
+        @include responsive('350px') {
+            width: 180px;
+            margin-bottom: 50px;
+        }
+    }
+    .plText {
+        position: relative;
+        .text {
+            @include responsive('600px') {
+                width: 90px;
+            }
+            @include responsive('350px') {
+                width: 180px;
+            }
+        }
+        .pltBottle {
+            position: absolute;
+            top: 80px;
+            width: 100%;
+            @include responsive('600px') {
+                top: 28px;
+            }
+            @include responsive('350px') {
+                top: 67px;
+            }
+            .pbCircle {
+                width: 53px;
+                height: 161px;
+                margin: 0 auto;
+                position: relative;
+                @include responsive('600px') {
+                    height: 70px;
+                    width: 23px;
+                }
+                @include responsive('350px') {
+                    height: 120px;
+                    width: 40px;
+                }
+                .loader {
+                    height: 0;
+                    width: 100%;
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    background-size: cover;
+                    background-image: url(/assets/images/bottle_load.png);
+                    background-position: bottom;
+                    @include transition(.3s all ease);
+                }
+                img {
+                    height: 161px;
+                    position: relative;
+                    z-index: 2;
+                    @include responsive('600px') {
+                        height: 70px;
+                    }
+                    @include responsive('350px') {
+                        height: 120px;
+                    }
+                }
+            }
+            .contPercentage {
+                position: relative;
+                width: 50px;
+                height: 50px;
+                margin: 10px auto 0;
+                .number {
+                    position: absolute;
+                    top: 0;
+                    width: 100%;
+                    left: 0;
+                    color: white;
+                    font-size: 14px;
+                    font-family: font3;
+                    text-align: center;
+                    padding-top: 18px;
+                    span {
+                        font-size: 18px;
+                    }
+                }
+            }
+            .pbNumber {
+                border: 2px solid white;
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                position: relative;
+                -webkit-transform-origin: 50% 50%;
+                transform-origin: 50% 50%;
+                @include animation(0s, 1.5s, loader1, linear, infinite);
+                &:after {
+                    content: "";
+                    position: absolute;
+                    top: -5px;
+                    left: 20px;
+                    width: 9px;
+                    height: 9px;
+                    border-radius: 10px;
+                    background-color: #fff;
+                }
+            }
+        }
+    }
+}
+
+@include keyframe (loader1) {
+    0% {
+        @include transform(rotate(0deg));
+    }
+    100% {
+        @include transform(rotate(360deg));
+    }
+}
